@@ -11,11 +11,11 @@ def main():
     num2 = 1
 
     
-    if n < 0: 
+    if userNumber < 0: 
         print("invalid number input!") 
-    elif n == 0: 
+    elif userNumber == 0: 
         print(num1) 
-    elif n == 1: 
+    elif userNumber == 1: 
         print(num2) 
     else: 
         for i in range(2,userNumber+1): 
