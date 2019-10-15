@@ -18,14 +18,22 @@ def doDivi(equation):
         equation[i-1] = float(equation[i-1]) / float(equation[i+1])
         del equation[i+1]
         del equation[i]
-
+        
+#Does the addtion of the equation.  
+def doAdd(equation):
+    while "+" in equation:
+        i = equation.index("+")
+        equation[i-1] = float(equation[i-1]) + float(equation[i+1])
+        del equation[i+1]
+        del equation[i]
 
 #Calls each function to solve the equation.
 def main():
     userInput = str(input("Enter and equation: "))
     equation = userInput.split()
-    doDivi(equation)
     doMulti(equation)
+    doDivi(equation)
+    doAdd(equation)
     print(equation)
     
 
