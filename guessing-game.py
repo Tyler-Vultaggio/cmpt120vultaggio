@@ -5,13 +5,16 @@
 
 def main():
 
-    Answer = "Dog"
+    Answer = "dog"
 
     while True:
         print("I am thinking of an animal: ")
         userGuess = input("Take a guess: ")
-        if userGuess == Answer:
+        if userGuess.lower() == Answer:
             print("Congrats you guessed the word!")
+            break
+        elif userGuess.lower() == "quit":
+            print("You quit the game.")
             break
         else:
             print("Wrong! Try again!")
