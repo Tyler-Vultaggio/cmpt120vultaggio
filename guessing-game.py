@@ -12,8 +12,14 @@ def main():
         userGuess = input("Take a guess: ")
         if userGuess.lower() == Answer:
             print("Congrats you guessed the word!")
-            break
-        elif userGuess.lower() == "quit":
+            question = input("Do you like this animal?(Y or N) ")
+            if question.upper() == "Y":
+                print("Cool me too!")
+                break
+            else:
+                print("Aww thats too bad.")
+                break
+        elif userGuess[0].lower() == "q":
             print("You quit the game.")
             break
         else:
