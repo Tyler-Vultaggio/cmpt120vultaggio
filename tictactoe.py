@@ -1,7 +1,7 @@
 # CMPT 120 Intro to Programming
 # Lab #6 – Lists and Error Handling
-# Author: Your Name Here
-# Created: YYYY-MM-
+# Author: Tyler Vultaggio
+# Created: 10-22-2019
 
 
 symbol = [ " ", "x", "o" ]
@@ -17,11 +17,8 @@ def printBoard(board):
     for i in range(3):
         printRow(board[i])
         print("+-----------+")
-    pass
 
 def markBoard(board, row, col, player):
-    # check to see whether the desired square is blank
-    # if so, set it to the player number
     if board[row][col] == int(0):
         board[row][col] = player
         return True
@@ -30,24 +27,20 @@ def markBoard(board, row, col, player):
 
 def getPlayerMove():
     row = int(input("Enter your row: "))
-    col = int(input("Enter your columon: ")) # prompt the user separately for the row and column numbers
-    return (row,col) # then return that row and column instead of (0,0)
+    col = int(input("Enter your columon: "))
+    return (row,col)
 
 def hasBlanks(board):
-    # for each row in the board...
     for row in board:
         for col in row:
             if col == 0:
                 return True
     return False
-    # for each square in the row...
-    # check whether the square is blank
-    # if so, return True
 
 def main():
     board = [[0,0,0],
              [0,0,0],
-             [0,0,0]] # TODO replace this with a three-by-three matrix of zeros
+             [0,0,0]]
     player = 1
     while hasBlanks(board):
         printBoard(board)
@@ -55,7 +48,7 @@ def main():
         if not markBoard(board,row,col,player):
             print("That postion was taken.")
         else:
-            player = player % 2 + 1 # switch player for next turn
+            player = player % 2 + 1
     printBoard(board)
 main()
 
