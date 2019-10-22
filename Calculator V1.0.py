@@ -35,6 +35,7 @@ def doSub(equation):
         del equation[i+1]
         del equation[i]
 
+# JA: You should keep the main here and move the fuctions to calc_functions.py 
 #Calls each function to solve the equation.
 def main():
     userInput = str(input("Enter and equation: "))
