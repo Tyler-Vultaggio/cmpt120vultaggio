@@ -235,8 +235,8 @@ def doSub(equation):
 
 def calculate(equation):
     newEquation = equation.split()
-    doMulti(newEquation)
     doDivi(newEquation)
+    doMulti(newEquation)
     doAdd(newEquation)
     doSub(newEquation)
     print(newEquation)
