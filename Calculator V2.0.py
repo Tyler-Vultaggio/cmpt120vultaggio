@@ -10,7 +10,7 @@ win = GraphWin("Calculator", 450, 750)
 win.setBackground("white")
 win.setCoords
 
-#equation = ""
+
 
 def createCalculator():
 #Every button will be 100px wide and 100px tall.
@@ -139,65 +139,56 @@ def getOutput(click, equation):
     x = click.getX()
     y = click.getY()
     if x > 25 and x < 120 and y > 605 and y < 700:
-        print("0")
         return "0"
     
     elif x > 25 and x < 120 and y > 505 and y < 595:
-        print("1")
         return "1"
     
     elif x > 125 and x < 220 and y > 505 and y < 595:
-        print("2")
         return "2"
     
     elif x > 225 and x < 325 and y > 505 and y < 595:
-        print("3")
         return "3"
     
     elif x > 25 and x < 120 and y > 405 and y < 495:
-        print("4")
         return "4"
     
     elif x > 125 and x < 220 and y > 405 and y < 495:
-        print("5")
         return "5"
     
     elif x > 225 and x < 325 and y > 405 and y < 495:
-        print("6")
         return "6"
     
     elif x > 25 and x < 120 and y > 305 and y < 395:
-        print("7")
         return "7"
     
     elif x > 125 and x < 220 and y > 305 and y < 395:
-        print("8")
         return "8"
     
     elif x > 225 and x < 325 and y > 305 and y < 395:
-        print("9")
         return "9"
+    
     elif x > 225 and x < 325 and y > 205 and y < 295:
-        print(" * ")
         return " * "
+    
     elif x > 125 and x < 220 and y > 205 and y < 295:
-        print(" / ")
         return " / "
+    
     elif x > 330 and x < 425 and y > 205 and y < 295:
-        print(" - ")
         return " - "
+
     elif x > 330 and x < 425 and y > 305 and y < 495:
-        print(" + ")
         return " + "
+    
     elif x > 125 and x < 220 and y > 605 and y < 700:
-        print(".")
         return "."
+    
     elif x > 225 and x < 325 and y > 605 and y < 700:
-        print("+/-")
         return ""
+    
     elif x > 330 and x < 425 and y > 505 and y < 700:
-        print("=")
         calculate(equation)
+        
     else:
         return ""
 
@@ -251,8 +242,7 @@ def main():
         new = getOutput(user, equation)
         if not(user.getX() > 330 and user.getX() < 425 and user.getY() > 505 and user.getY() < 700):
             equation = equation + new
-        if user.getX() > 25 and user.getX() < 120 and user.getY() > 205 and user.getY() < 295:
-            print("C")
+        if user.getX() > 25 and user.getX() < 120 and user.getY() > 205 and user.getY() < 295:            
             equation = ""
         
         print(equation)
