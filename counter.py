@@ -16,20 +16,42 @@ class Counter:
     def get_value(self):
         return self.count
 
-class BankAccount:
-    """Bank Account protected by a pin number."""
+class DecrementingCounter:
+#"""Simple counter that can be incremented, decremented, and cleared."""
     
-    def __init__(self, pin):
-        """Initial account balance is 0 and pin is 'pin'."""
-        
-    def deposit(self, pin, amount):
-        """Increment account balance by amount and return new balance."""
-        
-    def withdraw(self, pin, amount):
-        """Decrement account balance by amount and return amount withdrawn."""
-        
-    def get_balance(self, pin):
-        """Return account balance."""
-        
-    def change_pin(self, oldpin, newpin):
-        """Change pin from oldpin to newpin."""
+    def __init__(self):
+        #"""Initialize counter to 0."""
+        self.count = 0
+    
+    def increment(self):
+        #"""Increment counter by 1."""
+        self.count += 1
+    
+    def decrement(self):
+        #"""Decrement counter by 1.""" 
+        self.count -= 1
+    
+    def clear(self):
+        #"""Clear counter to 0."""
+        self.count = 0
+    
+    def get_value(self):
+        #"""Return the current value of the counter."""
+        return self.count
+
+class DecrementingCounter2(Counter):
+#"""Simple counter that can be incremented, decremented, and cleared."""
+
+    def decrement(self):
+        #"""Decrement counter by 1."""
+        self.count -= 1
+
+
+
+
+
+
+
+
+
+
