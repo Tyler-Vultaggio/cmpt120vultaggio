@@ -3,6 +3,8 @@
 #Author: Tyler Vultaggio
 #Date: 11/13/2019
 
+# JA: Your memory functions don't seem to work properly
+
 from graphics import *
 
 #This creates the grapical window for the program.

@@ -3,6 +3,8 @@
 #Author: Tyler Vultaggio
 #Date: 11/12/2019
 
+# JA: Always remember to add comments to your code
+
 class Product:
     def __init__(self, name, price, quantity):
         self.name = name
