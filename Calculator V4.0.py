@@ -10,6 +10,14 @@ win = GraphWin("Calculator", 450, 750)
 win.setBackground("white")
 win.setCoords
 
+class diplayBox:
+    def _init_(self, x1, y1, x2, y2, text):
+        self.x1 = x1
+        self.y1 = y1
+        self.x2 = x2
+        self.y2 = y2
+        self.text = text
+
 #Display box
 inputBox = Rectangle(Point(25,25), Point(425,90))
 inputBox.draw(win)
@@ -24,30 +32,30 @@ class Button:
         self.y2 = y2
         self.label = label
 
-def drawButton(Button, win):
-    x1 = button[0]
-    y1 = button[1]
-    x2 = button[2]
-    y2 = button[3]
-    label = button[4]
+    def drawButton(Button, win):
+        x1 = button[0]
+        y1 = button[1]
+        x2 = button[2]
+        y2 = button[3]
+        label = button[4]
 
-    rec = Rectangle(Point(x1, y1), Point(x2, y2))
+        rec = Rectangle(Point(x1, y1), Point(x2, y2))
 
-    rec.draw(win)
-    text = Text(Point((x2 - x1)/2 + x1,(y2 - y1)/2 + y1), label)
-    text.setSize(32)
-    text.draw(win)
+        rec.draw(win)
+        text = Text(Point((x2 - x1)/2 + x1,(y2 - y1)/2 + y1), label)
+        text.setSize(32)
+        text.draw(win)
 
-def isButtonPressed(button, click):
-    x1 = button[0]
-    y1 = button[1]
-    x2 = button[2]
-    y2 = button[3]
-    return click.getX() >= x1 and click.getX() <= x2 and click.getY() >= y1 and click.getY() <= y2
+    def isButtonPressed(button, click):
+        x1 = button[0]
+        y1 = button[1]
+        x2 = button[2]
+        y2 = button[3]
+        return click.getX() >= x1 and click.getX() <= x2 and click.getY() >= y1 and click.getY() <= y2
 
-def drawKeypad(buttons, win):
-    for button in buttons:
-        drawButton(button, win)
+    def drawKeypad(buttons, win):
+        for Button in buttons:
+            drawButton(Button, win)
 
 
 def displayEquation(equation, win):
@@ -116,14 +124,29 @@ def listToString(s):
     
     
 def main():
-    buttons = [Button(25, 605, 120, 700, "0"), Button(25, 505, 120, 595, "1"), Button(125, 505, 220, 595, "2"),
-               Button(225, 505, 325, 595, "3"), Button(25, 405, 120, 495, "4"), Button(125, 405, 220, 495, "5"),
-               Button(225, 405, 325, 495, "6"), Button(25, 305, 120, 395, "7"), Button(125, 305, 220, 395, "8"),
-               Button(225, 305, 325, 395, "9"), Button(125, 605, 220, 700, "."), Button(225, 605, 325, 700, "+/-"),
-               Button(330, 505, 425, 700, "="), Button(330, 305, 425, 495, " + "), Button(330, 205, 425, 295, " - "),
-               Button(25, 205, 120, 295, "C"), Button(125, 205, 220, 295, " / "), Button(225, 205, 325, 295, " * "),
-               Button(25, 105, 120, 195, "M+"), Button(125, 105, 220, 195, "M-"), Button(225, 105, 325, 195, "MR"),
-               Button(330, 105, 425, 195, "MC"), Button(0, 0, 450, 750, "")]
+    buttons = [Button(25, 605, 120, 700, "0"),
+               Button(25, 505, 120, 595, "1"),
+               Button(125, 505, 220, 595, "2"),
+               Button(225, 505, 325, 595, "3"),
+               Button(25, 405, 120, 495, "4"),
+               Button(125, 405, 220, 495, "5"),
+               Button(225, 405, 325, 495, "6"),
+               Button(25, 305, 120, 395, "7"),
+               Button(125, 305, 220, 395, "8"),
+               Button(225, 305, 325, 395, "9"),
+               Button(125, 605, 220, 700, "."),
+               Button(225, 605, 325, 700, "+/-"),
+               Button(330, 505, 425, 700, "="),
+               Button(330, 305, 425, 495, " + "),
+               Button(330, 205, 425, 295, " - "),
+               Button(25, 205, 120, 295, "C"),
+               Button(125, 205, 220, 295, " / "),
+               Button(225, 205, 325, 295, " * "),
+               Button(25, 105, 120, 195, "M+"),
+               Button(125, 105, 220, 195, "M-"),
+               Button(225, 105, 325, 195, "MR"),
+               Button(330, 105, 425, 195, "MC"),
+               Button(0, 0, 450, 750, "")]
     equation = ""
     memory = "0"
     drawKeypad(buttons, win)
